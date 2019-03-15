@@ -1,9 +1,6 @@
 package java1;
 import java.util.*;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 public class solution {
 
 	public static void main(String[] args) {
@@ -11,9 +8,8 @@ public class solution {
 		Scanner sc=new Scanner(System.in);
 		LinkedList<missedCall> queue = new LinkedList<missedCall>()
 				  {
-			private static final long serialVersionUID = -6707803882461262867L;
 
-            public boolean add(missedCall object) {
+            public void addFirst(missedCall object) {
                 boolean result;
                 if(this.size() < 2)
                     result = super.add(object);
@@ -22,7 +18,6 @@ public class solution {
                     super.removeFirst();
                     result = super.add(object);
                 }
-                return result;
             }
         };
 				  LinkedList<missedCall> queue1 = new LinkedList<missedCall>()
@@ -48,13 +43,12 @@ public class solution {
 		{
 			System.out.println("entre the phne number ");
 			int num=sc.nextInt();
-			System.out.println("Enter the time of call");
-			int t=sc.nextInt();
+			Date date = new Date();
 			System.out.println("Entre the origin");
 			String ori=sc.next();
 			System.out.println("Entre the name of caller");
 			String name=sc.next();
-			queue.addFirst(new missedCall(t, ori, name, num));
+			queue.addFirst(new missedCall(date, ori, name, num));
 			
 			System.out.println("Wnt more missed_calls?? \n1:yes 2:no\n");
 			n=sc.nextInt();

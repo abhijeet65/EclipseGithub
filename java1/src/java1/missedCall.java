@@ -1,13 +1,15 @@
 package java1;
 
+import java.util.Date;
+
 public class missedCall {
 	
-	int time;
+	Date time;
 	String origin;
 	String callername;
 	int callnumber;
 	
-	missedCall(int time,String o,String n,int num )
+	missedCall(Date time,String o,String n,int num )
 	{
 		this.time=time;
 		this.origin=o;
@@ -15,7 +17,7 @@ public class missedCall {
 		this.callnumber=num;
 		
 	}
-	missedCall(int time,String o,int num )
+	missedCall(Date time,String o,int num )
 	{
 		this.time=time;
 		this.origin=o;
